@@ -7,5 +7,12 @@ export default {
   theme: {
     extend: {},
   },
+  variants: {
+    extend: {
+      boxShadow: ['hover', 'focus'],
+      translate: ['hover', 'focus'],
+    },
+  },
+
   plugins: [],
 }
