@@ -8,7 +8,7 @@ const Login = () => {
   const handleLogin=async()=>{
     try {
       const api=await axios.post('http://localhost:8080/login',{
-        Password:Password,
+        password:Password,
         email:email
       })
       alert('alright , logged in ')

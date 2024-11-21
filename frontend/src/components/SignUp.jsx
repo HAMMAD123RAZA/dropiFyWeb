@@ -10,7 +10,7 @@ const SignUp = () => {
     try {
       const api=await axios.post('http://localhost:8080/register',{
         name:name,
-        Password:Password,
+        password:Password,
         email:email
       })
       alert('Registered Successful')
