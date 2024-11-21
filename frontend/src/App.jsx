@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter as Router , Routes , Route} from 'react-router-dom'
+import {BrowserRouter as Router , Routes , Route, Navigate} from 'react-router-dom'
 import Home from './components/Home'
 import Navbar from './components/Navbar'
 import Slider from './components/Slider'
@@ -10,23 +10,95 @@ import Explore from './components/Explore'
 import Id from './components/detail/[Id]'
 import Cart from './RTK/Cart.jsx'
 import Login from './components/Login.jsx'
+import PropTypes from 'prop-types';
 import SignUp from './components/SignUp.jsx'
 
 const App = () => {
+  const PrivateRoute=({children})=>{
+    const token=localStorage.getItem('token')
+   return token ? children :<Navigate to='/register' />
+  }
+  
+PrivateRoute.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
   return (
     <Router>
       <Navbar/>
       <Slider/>
       <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/bottle' element={<Bottles/>}  />
-        <Route path='/gallon' element={<Gallon/>}  />
-        <Route path='/tank' element={<Tanker/>}  />
-        <Route path='/explore' element={<Explore/>}  />
-        <Route path='/cart' element={<Cart/>}  />
-        <Route path='/detail/:Id' element={<Id/>} />
-      <Route path='/login' element={<Login/>} />
-      <Route path='/register' element={<SignUp/>} />
+        {/* Private Routes */}
+        <Route
+          path="/"
+          element={
+            <PrivateRoute>
+              <Home />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/bottle"
+          element={
+            <PrivateRoute>
+              <Bottles />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/gallon"
+          element={
+            <PrivateRoute>
+              <Gallon />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/tank"
+          element={
+            <PrivateRoute>
+              <Tanker />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/explore"
+          element={
+            <PrivateRoute>
+              <Explore />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            <PrivateRoute>
+              <Cart />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/detail/:Id"
+          element={
+            <PrivateRoute>
+              <Id />
+            </PrivateRoute>
+          }
+        />
+
+        {/* Public Routes */}
+        <Route
+          path="/login"
+          element={
+              <Login />
+          }
+        />
+        <Route
+          path="/register"
+          element={
+              <SignUp />
+          }
+        />
       </Routes>
     </Router>
 
