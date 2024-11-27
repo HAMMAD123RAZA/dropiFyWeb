@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {BrowserRouter as Router , Routes , Route, Navigate} from 'react-router-dom'
 import Home from './components/Home'
 import Navbar from './components/Navbar'
@@ -12,8 +12,19 @@ import Cart from './RTK/Cart.jsx'
 import Login from './components/Login.jsx'
 import PropTypes from 'prop-types';
 import SignUp from './components/SignUp.jsx'
+import Loading from './components/Loading.jsx'
 
 const App = () => {
+
+  const [Load, setLoad] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoad(false);
+    }, 900);
+  }, []);
+
+
   const PrivateRoute=({children})=>{
     const token=localStorage.getItem('token')
    return token ? children :<Navigate to='/register' />
@@ -24,7 +35,10 @@ PrivateRoute.propTypes = {
 };
 
   return (
-    <Router>
+    <div>
+    {Load?(
+      <Loading/>
+    ):(    <Router>
       <Navbar/>
       <Slider/>
       <Routes>
@@ -101,7 +115,8 @@ PrivateRoute.propTypes = {
         />
       </Routes>
     </Router>
-
+)}
+</div>
   )
 }
 

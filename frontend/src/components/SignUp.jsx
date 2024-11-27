@@ -1,5 +1,8 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import Aos from 'aos'
+import 'aos/dist/aos.css';
+
 
 const SignUp = () => {
   const [name, setname] = useState('')
@@ -21,9 +24,13 @@ const SignUp = () => {
     }
   }
 
+  useEffect(() => {
+    Aos.init();
+  }, [])
+
   return (
-    <div className='flex justify-center items-center h-screen bg-gray-100' >
-<div className='bg-white shadow-lg border rounded-lg border-gray-400 p-8 w-96' >
+    <div  className='flex justify-center items-center h-screen bg-gray-100' >
+<div data-aos='fade-down-right' className='bg-white shadow-lg border rounded-lg border-gray-400 p-8 w-96' >
 <h1 className="text-center text-3xl font-bold text-blue-700 mb-6">Register</h1>
 
 <label htmlFor="email" className="block font-bold text-blue-700 text-lg mb-2">

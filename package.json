@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "aos": "^2.3.4",
+    "react-loading": "^2.0.3",
+    "react-lottie": "^1.2.9",
     "react-router-dom": "^6.27.0"
   }
 }

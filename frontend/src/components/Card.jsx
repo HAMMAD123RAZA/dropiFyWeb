@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+
+
 
 const Card = ({ item ,id}) => {
+
+  useEffect(()=>{
+Aos.init()
+  },[])
+
   return (
     <Link
+    data-aos='flip-up'
       to={`/detail/${item?._id}`}
       className="rounded-lg border border-gray-300 bg-gray shadow-lg active:shadow-2xl active:-translate-y-1 max-w-xs"
       >

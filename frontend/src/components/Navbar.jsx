@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <>
     <div className="flex justify-between bg-gray-200 p-5 ">
-      <p className='font-bold text-blue-500 text-3xl'>Dropify</p>
+      <Link to='/' className='font-bold text-blue-500 text-3xl'>Dropify</Link>
       <div className=' hidden md:flex gap-6' >
       <Link to='/' className='font-bold text-blue-500 text-xl' >Home</Link>
       <Link to='/bottle' className='font-bold text-blue-500 text-xl' >Bottles</Link>
