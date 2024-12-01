@@ -5,6 +5,9 @@ import RelatedItem from '../RelatedItem'
 import Counter from '../Counter'
 import { useDispatch } from 'react-redux'
 import { addItem } from '../../RTK/CartSlice'
+import { toast } from 'react-toastify'
+import Swal from 'sweetalert2'
+
 // import {addItem} from './rtk'
 
 const Id = () => {
@@ -23,9 +26,20 @@ const Id = () => {
     useEffect(()=>{
         getData()
     })
+
     const handleAddCart=(item)=>{
       dispatch(addItem(item))
+      Swal.fire({
+        icon:'success',
+        title:"Alright",
+        text:"Item Added In The Cart!",
+        iconColor:"rgb(37 99 235)",
+        color:"rgb(37 99 235)",
+        confirmButtonColor:"rgb(37 99 235)"
+
+      });
     }
+
         return (
     <>
 <div className="grid md:grid-cols-2 md:gap-8 p-4">

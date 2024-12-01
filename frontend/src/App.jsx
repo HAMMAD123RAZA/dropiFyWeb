@@ -13,6 +13,7 @@ import Login from './components/Login.jsx'
 import PropTypes from 'prop-types';
 import SignUp from './components/SignUp.jsx'
 import Loading from './components/Loading.jsx'
+import { ToastContainer } from 'react-toastify'
 
 const App = () => {
 
@@ -114,6 +115,8 @@ PrivateRoute.propTypes = {
           }
         />
       </Routes>
+      <ToastContainer />
+
     </Router>
 )}
 </div>
