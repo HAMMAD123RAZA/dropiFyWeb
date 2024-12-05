@@ -41,7 +41,6 @@ PrivateRoute.propTypes = {
       <Loading/>
     ):(    <Router>
       <Navbar/>
-      <Slider/>
       <Routes>
         {/* Private Routes */}
         <Route
