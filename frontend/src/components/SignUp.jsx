@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Aos from 'aos'
 import 'aos/dist/aos.css';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 
 const SignUp = () => {
@@ -9,15 +10,21 @@ const SignUp = () => {
   const [Password, setPassword] = useState('')
   const [email, setemail] = useState('')
 
+  const navigate=useNavigate()
   const handleSignIn=async()=>{
     try {
       const api=await axios.post('http://localhost:8080/register',{
         name:name,
         password:Password,
-        email:email
+        email:email,
+        
       })
+      localStorage.setItem('token',api.data.token)
+      setname('')
+      setPassword('')
+      setemail('')
       alert('Registered Successful')
-      
+      navigate('/')
         } catch (error) {
           alert("Having an err")
       console.log(error)

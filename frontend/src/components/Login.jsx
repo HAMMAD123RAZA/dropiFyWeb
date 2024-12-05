@@ -1,9 +1,11 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
   const [Password, setPassword] = useState('')
   const [email, setemail] = useState('')
+const navigate=useNavigate()
 
   const handleLogin=async()=>{
     try {
@@ -12,6 +14,11 @@ const Login = () => {
         email:email
       })
       alert('alright , logged in ')
+      setemail('')
+      setPassword('')
+      localStorage.setItem('token',api.data.token)
+
+      navigate('/')
     } catch (error) {
       console.log(error)
       alert('couldnt get through')

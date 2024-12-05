@@ -54,9 +54,8 @@ const Cart = () => {
 };
 
 return (
-  <div>
-      <h2 className="text-2xl font-bold mb-4">Cart</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+  <div className='my-3' >
+      <div className="grid grid-cols-1 md:grid-cols-3  gap-4">
           {items.map((item) => (
               <div key={item._id} className="card w-80 bg-base-100 shadow-xl rounded-lg overflow-hidden">
                   <figure>
