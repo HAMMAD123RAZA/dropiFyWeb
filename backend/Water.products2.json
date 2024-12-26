@@ -1,0 +1,161 @@
+[{
+  
+  "name": "Tanker ",
+  "category": "Tanker",
+  "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLo2sTx-hDe0k_4HuhSk0m9hSwXb4I0rHQKw&s",
+  "price": 6000
+},
+{
+  
+  "name": "Bottle packet ",
+  "image": "https://res.cloudinary.com/diblqbuco/image/upload/v1729500778/uploadsAdmin/qjopujkdfjs8ijfobbun.jpg",
+  "price": 570
+},
+{
+  
+  "name": "Mini packet ",
+  "image": "https://res.cloudinary.com/diblqbuco/image/upload/v1729500834/uploadsAdmin/okbida6ow6sgidewnw2g.jpg",
+  "price": 300
+},
+{
+  
+  "name": "Bottle ",
+  "image": "https://res.cloudinary.com/diblqbuco/image/upload/v1729500869/uploadsAdmin/lluwyyfjight2iay4cwp.jpg",
+  "price": 120
+},
+{
+  
+  "name": "Small size",
+  "image": "https://res.cloudinary.com/diblqbuco/image/upload/v1729500949/uploadsAdmin/crrbx8ruulkmknvtskuk.jpg",
+  "price": 80
+},
+{
+  
+  "name": "Bottle",
+  "image": "https://res.cloudinary.com/diblqbuco/image/upload/v1729500975/uploadsAdmin/v9f9miifk5lqof92ecpc.jpg",
+  "price": 90
+},
+{
+  
+  "name": "Water Gallon",
+  "image": "https://res.cloudinary.com/diblqbuco/image/upload/v1729501308/uploadsAdmin/kfnothxmkyobj2qk2lsj.jpg",
+  "price": 1400
+},
+{
+  
+  "name": "Mini gallon ",
+  "image": "https://res.cloudinary.com/diblqbuco/image/upload/v1729501390/uploadsAdmin/ye9kjhpx5viqpjxkofu0.jpg",
+  "price": 720
+},
+{
+  
+  "name": "Aquafina",
+  "image": "https://res.cloudinary.com/diblqbuco/image/upload/v1729501434/uploadsAdmin/fesd5x9nhbpfkrk04as3.jpg",
+  "price": 95
+},
+{
+  
+  "name": "Medium Tank",
+  "image": "https://res.cloudinary.com/diblqbuco/image/upload/v1729501539/uploadsAdmin/pzdnaqyl2beiqfkve30z.jpg",
+  "price": 4200
+},
+{
+  
+  "name": "Full Tank",
+  "image": "https://res.cloudinary.com/diblqbuco/image/upload/v1729501581/uploadsAdmin/nlcv5dnttlfp3bpmr7qz.jpg",
+  "price": 7200
+},
+{
+  
+  "name": "Mini Tank",
+  "image": "https://res.cloudinary.com/diblqbuco/image/upload/v1729501615/uploadsAdmin/lxtxf1vy9bkil7rzlos2.jpg",
+  "price": 4500
+},
+{
+  
+  "name": "Regular Bottle ",
+  "category": "Bottle",
+  "image": "https://res.cloudinary.com/diblqbuco/image/upload/v1729592079/uploadsAdmin/tcc1a2ok44k4djsxukad.jpg",
+  "price": 120
+},
+{
+  
+  "name": "Regular Gallon ",
+  "category": "Gallon",
+  "image": "https://res.cloudinary.com/diblqbuco/image/upload/v1729592148/uploadsAdmin/dggkttwurtk5ovinpdxc.jpg",
+  "price": 1550
+},
+{
+  
+  "name": "6 packs",
+  "category": "Bottle",
+  "image": "https://res.cloudinary.com/diblqbuco/image/upload/v1729592190/uploadsAdmin/dnyldnincdsyvyvbftof.jpg",
+  "price": 520
+},
+{
+  
+  "name": "Mini Bottles ",
+  "category": "Mini Bottle",
+  "image": "https://res.cloudinary.com/diblqbuco/image/upload/v1729592228/uploadsAdmin/z72cmstzztspufgcqxup.jpg",
+  "price": 320
+},
+{
+  
+  "name": "Regular Tank ",
+  "category": "Tanker",
+  "image": "https://res.cloudinary.com/diblqbuco/image/upload/v1729617374/uploadsAdmin/ft6mfovnjxshpruzgkx4.jpg",
+  "price": 5000
+},
+{
+  
+  "name": "Mini Tank ",
+  "category": "Tanker",
+  "image": "https://res.cloudinary.com/diblqbuco/image/upload/v1729617418/uploadsAdmin/cegjfppb8fltqqmhriwg.jpg",
+  "price": 3800
+},
+{
+  
+  "name": "Nestle Gallon ",
+  "category": "Gallon",
+  "image": "https://res.cloudinary.com/diblqbuco/image/upload/v1729617456/uploadsAdmin/bejmj4teyamdk0hd84zy.jpg",
+  "price": 1500
+},
+{
+  
+  "name": "Mini packs",
+  "category": "Mini Bottle",
+  "image": "https://res.cloudinary.com/diblqbuco/image/upload/v1729617492/uploadsAdmin/ghnyfjssetiocazditld.jpg",
+  "price": 420
+},
+{
+  
+  "name": "",
+  "category": "",
+  "price": 0
+},
+{
+  
+  "name": "",
+  "category": "",
+  "price": 0
+},
+{
+  
+  "name": "",
+  "category": "",
+  "price": 0
+},
+{
+  
+  "name": "bottle3",
+  "category": "bottle",
+  "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ30udeu2y-pJdpQ4zJnLAkob7IA5b9tr42Fw&s",
+  "price": 140
+},
+{
+  
+  "name": "bottle3",
+  "category": "bottle",
+  "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ30udeu2y-pJdpQ4zJnLAkob7IA5b9tr42Fw&s",
+  "price": 140
+}]

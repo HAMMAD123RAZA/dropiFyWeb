@@ -7,7 +7,7 @@ import Bottles from './components/Bottles'
 import Gallon from './components/Gallon'
 import Tanker from './components/Tanker'
 import Explore from './components/Explore'
-import Id from './components/detail/[Id]'
+import Id from './components/detail/[Id].jsx'
 import Cart from './RTK/Cart.jsx'
 import Login from './components/Login.jsx'
 import PropTypes from 'prop-types';

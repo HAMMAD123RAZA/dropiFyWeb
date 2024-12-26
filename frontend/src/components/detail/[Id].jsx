@@ -12,21 +12,23 @@ import Swal from 'sweetalert2'
 
 const Id = () => {
     const [data, setdata] = useState([])
-    const {Id}=useParams()
+    const { Id } = useParams();
     const dispatch=useDispatch()
-    console.log(Id)
-    const getData=async()=>{
-        try {
-            const api=await axios.get(`http://localhost:8080/get/${Id}`)
-            setdata(api?.data)
-        } catch (error) {
-            console.log(error)
-        }
-    }
-    useEffect(()=>{
-        getData()
-    })
-
+    console.log(Id , "Id")
+    const getData = async () => {
+      try {
+        const api = await axios.get(`http://localhost:8080/get/${Id}`);
+        console.log("API Response:", api?.data);
+        setdata(api?.data[0] || {});
+      } catch (error) {
+        console.error("Error fetching product:", error.response?.data || error.message);
+      }
+      
+    };
+    useEffect(() => {
+     getData();
+    }, [Id]);
+    
     const handleAddCart=(item)=>{
       dispatch(addItem(item))
       Swal.fire({

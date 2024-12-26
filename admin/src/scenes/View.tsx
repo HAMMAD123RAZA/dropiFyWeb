@@ -7,7 +7,6 @@ interface product {
     category:string,
     price:number,
     image:string
-
 }
 
 const View = () => {

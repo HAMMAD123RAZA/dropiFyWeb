@@ -9,7 +9,7 @@ const RelatedItem = ({cat,id}) => {
     console.log(Id)
     const getData=async()=>{
         try {
-            const api=await axios.get(`http://localhost:8080/get/`)
+            const api=await axios.get(`http://localhost:8080/get`)
             const filter=api.data.filter(item=>item.category===cat && item._id!==id)
             setdata(filter)
         } catch (error) {

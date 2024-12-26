@@ -2,50 +2,44 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import dotenv from 'dotenv';
 import nodemailer from 'nodemailer'
 
 import { User } from './models/UserModel.js';
 import { CreateProduct } from './controllers/CreateProduct.js';
-import { filProduct, GetProduct, GetProducts } from './controllers/GetProducts.js';
+import {  GetProduct, GetProducts } from './controllers/GetProducts.js';
 import { login, signUp } from './controllers/UserController.js';
 import { delProduct } from './controllers/DelProduct.js';
 import { createOrder } from './controllers/CreateOrder.js';
-
+import {neon} from '@neondatabase/serverless'
+import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
-app.use(express.json({ limit: '50mb' }));
-app.use(express.urlencoded({ limit: '50mb', extended: true }));
+app.use(express.json());
 app.use(cors());
 
 app.use(express.urlencoded({ extended: true }));
 
-
 //db.js
-mongoose.connect('mongodb://localhost:27017',{
-    dbName:"Water",
-}).then(()=>{
-    console.log('db connected')
-}).catch((err)=>{
-    console.log('err in connection to db:',err)
-})
+const sql=neon(process.env.neonDb)
 
-// const connectDb = async () => {
-//     try {
-//         await mongoose.connect(process.env.dbUrl);
-//         console.log('DB connected');
-//     } catch (error) {
-//         console.log('Error in DB connection:', error);
-//     }
-// };
+const conn=async()=>{
+    try {
+        await sql `SELECT 1`
+        console.log('DATABSE CONNECTED')
+    } catch (error) {
+        console.log('FAILED TO CONNECT TO DB',error)
+        // process.exit(1)
+    }
+}
+
+conn()
 
 app.post('/create', CreateProduct);
 app.get('/get', GetProducts);
-app.get('/get/:id', GetProduct);
+app.get('/get/:Id', GetProduct);
 app.post('/register', signUp);
 app.post('/login', login);
-app.get('/filter', filProduct);
 app.delete('/delete/:id', delProduct);
 app.post('/sendOrder', createOrder);
 

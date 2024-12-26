@@ -14,7 +14,7 @@ Aos.init()
   return (
     <Link
     data-aos='flip-up'
-      to={`/detail/${item?._id}`}
+      to={`/detail/${item?.id}`}
       className="rounded-lg border border-gray-300 bg-gray shadow-lg active:shadow-2xl active:-translate-y-1 max-w-xs"
       >
       <img

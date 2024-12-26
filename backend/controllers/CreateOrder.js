@@ -1,6 +1,9 @@
 import nodemailer from 'nodemailer'
 import express from 'express';
 
+import dotenv from 'dotenv';
+dotenv.config();
+
 // Create transporter
 let transporter = nodemailer.createTransport({
   service: 'Gmail',

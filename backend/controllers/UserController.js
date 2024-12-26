@@ -3,9 +3,10 @@ import express from "express";
 import { User } from "../models/UserModel.js";
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
-import dotenv from 'dotenv'
-
+import { neon } from '@neondatabase/serverless';
+import dotenv from 'dotenv';
 dotenv.config();
+const sql=neon(process.env.neonDb)
 
 
 export const signUp=async(req,res)=>{
