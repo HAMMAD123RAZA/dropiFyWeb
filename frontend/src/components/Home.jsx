@@ -10,7 +10,7 @@ const Home = () => {
 
   const fetchData = async () => {
     try {
-      const api = await axios.get('http://localhost:8080/get');
+      const api = await axios.get('https://backend-do3qpamj4-hammad-razas-projects.vercel.app/get');
       setData(api.data);
     } catch (error) {
       console.error('Error occurred in fetching data:', error);

@@ -14,10 +14,17 @@ import {neon} from '@neondatabase/serverless'
 import dotenv from 'dotenv';
 dotenv.config();
 
+//  deployed backend url
+// https://backend-do3qpamj4-hammad-razas-projects.vercel.app/
+
 const app = express();
 app.use(express.json());
-app.use(cors());
-
+app.use(cors({
+    origin: 'http://localhost:5173/', 
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true, 
+  }));
+  
 app.use(express.urlencoded({ extended: true }));
 
 //db.js
