@@ -17,15 +17,15 @@ dotenv.config();
 //  deployed backend url
 // https://backend-do3qpamj4-hammad-razas-projects.vercel.app/
 
+// https://dropapi-213310my7-hammad-razas-projects.vercel.app/
+
 const app = express();
 app.use(express.json());
-app.use(cors())
 app.use(cors({
-    origin: 'http://localhost:5173', 
+    origin: '*', // Allow all origins
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true, 
   }));
-  
+    
 app.use(express.urlencoded({ extended: true }));
 
 //db.js
