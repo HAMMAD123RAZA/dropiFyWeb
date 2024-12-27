@@ -51,7 +51,7 @@ app.delete('/delete/:id', delProduct);
 app.post('/sendOrder', createOrder);
 
 app.get('/', (req, res) => {
-    res.send('hey there');
+    res.send('hello wsup');
 });
 
 // Disabling caching
