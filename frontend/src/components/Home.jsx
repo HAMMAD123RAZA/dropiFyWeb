@@ -12,7 +12,7 @@ const Home = () => {
 
   const fetchData = async () => {
     try {
-      const api = await axios.get('dropapi-213310my7-hammad-razas-projects.vercel.app/get');
+      const api = await axios.get('https://dropapi-213310my7-hammad-razas-projects.vercel.app/get');
       setData(api.data);
     } catch (error) {
       console.error('Error occurred in fetching data:', error);
@@ -24,13 +24,13 @@ const Home = () => {
 
   }, []);
 
-  // const sliceData = data.slice(0, 8);
+  const sliceData = data.slice(0, 8);
 
   return (
     <>
           <Slider/>
     <div  className="md:grid md:grid-cols-4 grid-cols-1 md:px-2 px-6 md:py-3 py-5 gap-x-4 gap-y-6">
-      {data.map((item, id) => (
+      {sliceData.map((item, id) => (
         <Card key={id} item={item} />
       ))}
     </div>
