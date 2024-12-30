@@ -5,14 +5,14 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import Slider from './Slider';
 
-// dropapi-213310my7-hammad-razas-projects.vercel.app
+// https://dropapi-30ujop7pv-hammad-razas-projects.vercel.app/get
 
 const Home = () => {
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
     try {
-      const api = await axios.get('https://dropapi-213310my7-hammad-razas-projects.vercel.app/get');
+      const api = await axios.get('https://dropapi-30ujop7pv-hammad-razas-projects.vercel.app/get');
       setData(api.data);
     } catch (error) {
       console.error('Error occurred in fetching data:', error);

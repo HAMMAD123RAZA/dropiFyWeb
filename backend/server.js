@@ -15,16 +15,14 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 //  deployed backend url
-// https://backend-do3qpamj4-hammad-razas-projects.vercel.app/
-
-// https://dropapi-213310my7-hammad-razas-projects.vercel.app/
+// https://dropapi-30ujop7pv-hammad-razas-projects.vercel.app/get
 
 const app = express();
 app.use(express.json());
 
 // CORS configuration
 const corsOptions = {
-    origin: 'http://localhost:3000', // Allow requests from this specific origin
+    origin: 'http://localhost:5173', // Allow requests from this specific origin
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Explicitly specify allowed HTTP methods
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'], // Specify allowed request headers
     credentials: true, // Enable cookies and credentials
