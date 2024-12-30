@@ -22,14 +22,17 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-app.use(
-    cors({
-      origin: 'http://localhost:5173', // Allow only this specific origin
-      credentials: true,              // Enable credentials for this origin
-      optionSuccessStatus: 200        // Response status for successful options request
-    })
-  )
+// CORS configuration
+const corsOptions = {
+    origin: 'http://localhost:3000', // Allow requests from this specific origin
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Explicitly specify allowed HTTP methods
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'], // Specify allowed request headers
+    credentials: true, // Enable cookies and credentials
+  };
   
+  // Apply CORS middleware
+  app.use(cors(corsOptions));
+    
 // app.use(cors({
 //     origin: '*',
 //     methods: ['GET', 'POST', 'PUT', 'DELETE'],
@@ -61,7 +64,7 @@ app.delete('/delete/:id', delProduct);
 app.post('/sendOrder', createOrder);
 
 app.get('/', (req, res) => {
-    res.send('hello wsup');
+    res.send('Hi body');
 });
 
 // Disabling caching
