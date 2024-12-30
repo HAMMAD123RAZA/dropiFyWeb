@@ -23,7 +23,6 @@ const Id = () => {
       } catch (error) {
         console.error("Error fetching product:", error.response?.data || error.message);
       }
-      
     };
     useEffect(() => {
      getData();
