@@ -15,7 +15,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 //  deployed backend url
-// https://dropapi-30ujop7pv-hammad-razas-projects.vercel.app/get
+//https://dropapi-54rsae4p4-hammad-razas-projects.vercel.app
 
 const app = express();
 app.use(express.json());
@@ -62,7 +62,7 @@ app.delete('/delete/:id', delProduct);
 app.post('/sendOrder', createOrder);
 
 app.get('/', (req, res) => {
-    res.send('Hi body');
+    res.send('Hi Wasup');
 });
 
 // Disabling caching
