@@ -20,16 +20,38 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-// CORS configuration
 const corsOptions = {
-    origin: 'http://localhost:5173', // Allow requests from this specific origin
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Explicitly specify allowed HTTP methods
-    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'], // Specify allowed request headers
-    credentials: true, // Enable cookies and credentials
-  };
+    origin: "http://localhost:5173", 
+    methods: "GET, POST, PUT, DELETE, OPTIONS, PATCH", // Allows all HTTP methods
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "X-Requested-With",
+      "Accept",
+      "Origin",
+      "X-Custom-Header",
+      "X-Auth-Token", // Add any custom headers here if needed
+      "X-Frame-Options",
+      "X-XSS-Protection",
+      "Access-Control-Allow-Headers",
+      "Access-Control-Allow-Methods",
+      "Access-Control-Allow-Origin",
+      "Access-Control-Allow-Credentials",
+    ], // Allows all typical headers for communication
+    exposedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "X-Requested-With",
+      "Accept",
+      "Origin",
+      "X-Custom-Header",
+      "X-Auth-Token", // Exposes headers to the browser
+    ],
+    credentials: true, // Allow credentials such as cookies or authentication tokens
+    maxAge: 86400, // Cache the CORS preflight response for 24 hours (in seconds)
+  }  
   
-  // Apply CORS middleware
-  app.use(cors(corsOptions));
+app.use(cors(corsOptions));
     
 // app.use(cors({
 //     origin: '*',
