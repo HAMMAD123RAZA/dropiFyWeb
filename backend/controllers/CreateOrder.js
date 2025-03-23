@@ -14,10 +14,10 @@ let transporter = nodemailer.createTransport({
 });
 
 export const createOrder = (req, res) => {
-  const { userName, userEmail, orderDetails } = req.body;  // Extract user details from request
+  const { userName, userEmail, orderDetails } = req.body;  
 console.log('backend details',orderDetails)
-  // Convert orderDetails to a JSON formatted string with proper indentation
-  const formattedOrderDetails = JSON.stringify(orderDetails, null, 2);
+ 
+const formattedOrderDetails = JSON.stringify(orderDetails, null, 2);
   
   let mailOptions = {
     from: userEmail,  

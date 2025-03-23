@@ -5,8 +5,6 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import Slider from './Slider';
 
-// https://dropapi-54rsae4p4-hammad-razas-projects.vercel.app/
-
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -15,6 +13,7 @@ const Home = () => {
     try {
       const api = await axios.get('https://dropapi-54rsae4p4-hammad-razas-projects.vercel.app/get');
       setData(api.data);
+      console.log("data from home:",api.data.data)
     } catch (error) {
       console.error('Error occurred in fetching data:', error);
     }
@@ -22,7 +21,6 @@ const Home = () => {
 
   useEffect(() => {
     fetchData();
-
   }, []);
 
   const sliceData = data.slice(0, 8);

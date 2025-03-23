@@ -46,57 +46,55 @@ PrivateRoute.propTypes = {
         <Route
           path="/"
           element={
-            <PrivateRoute>
+            
               <Home />
-            </PrivateRoute>
+            
           }
         />
         <Route
           path="/bottle"
           element={
-            <PrivateRoute>
+            
               <Bottles />
-            </PrivateRoute>
+            
           }
         />
         <Route
           path="/gallon"
           element={
-            <PrivateRoute>
+            
               <Gallon />
-            </PrivateRoute>
+            
           }
         />
         <Route
           path="/tank"
           element={
-            <PrivateRoute>
+            
               <Tanker />
-            </PrivateRoute>
+            
           }
         />
         <Route
           path="/explore"
           element={
-            <PrivateRoute>
+            
               <Explore />
-            </PrivateRoute>
+            
           }
         />
         <Route
           path="/cart"
-          element={
-            <PrivateRoute>
+          element={            
               <Cart />
-            </PrivateRoute>
           }
         />
         <Route
           path="/detail/:Id"
           element={
-            <PrivateRoute>
+            
               <Id />
-            </PrivateRoute>
+            
           }
         />
 
@@ -115,7 +113,6 @@ PrivateRoute.propTypes = {
         />
       </Routes>
       <ToastContainer />
-
     </Router>
 )}
 </div>

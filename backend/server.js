@@ -60,7 +60,6 @@ app.use(cors(corsOptions));
     
 app.use(express.urlencoded({ extended: true }));
 
-//db.js
 const sql=neon(process.env.neonDb)
 
 const conn=async()=>{
