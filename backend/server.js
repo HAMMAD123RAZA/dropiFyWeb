@@ -12,6 +12,7 @@ import { delProduct } from './controllers/DelProduct.js';
 import { createOrder } from './controllers/CreateOrder.js';
 import {neon} from '@neondatabase/serverless'
 import dotenv from 'dotenv';
+import { sendEmailVerification, verifyEmail } from './controllers/SendEmailVerify.js';
 dotenv.config();
 
 //  deployed backend url
@@ -81,10 +82,15 @@ app.post('/register', signUp);
 app.post('/login', login);
 app.delete('/delete/:id', delProduct);
 app.post('/sendOrder', createOrder);
+app.post('/send_email_verify', sendEmailVerification);
+
+// Route to verify email
+app.get('/verify-email', verifyEmail);
 
 app.get('/', (req, res) => {
     res.send('Hi Wasup');
 });
+
 
 // Disabling caching
 app.use((req, res, next) => {

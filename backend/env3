@@ -1,0 +1,28 @@
+DB_USERNAME=01hammadraza
+DB_PASSWORD=hKZPM3gCtrdi3Q1O
+CLOUDINARY_URL=cloudinary://<818677984262534>:<Lzxd6MeNR0XedDuUfUouxFurR-s>@diblqbuco
+
+jwt_secKey=uiakxiwr8nak4@$jsi8%@sdfj
+
+CLOUDINARY_CLOUD_NAME=diblqbuco
+CLOUDINARY_API_SECRET=Lzxd6MeNR0XedDuUfUouxFurR-s
+CLOUDINARY_API_KEY=818677984262534
+
+# env//
+
+localhost=http://192.168.100.10:8080
+email=hr7643157@gmail.com
+password=kzth qojz hoac iwdk
+
+# email=01hammadraza@gmail.com
+# password=pqzk eneg pwxz nuov
+dbUrl='mongodb+srv://myNewUsername:newUser@cluster0.aykiz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+gmailPass=ropf umld sfue qxzh
+
+myGmail=01hammadraza@gmail.com
+
+MEMory@123
+
+neonDb=postgresql://neondb_owner:QCt72xyzDLof@ep-steep-frost-a5zsffga.us-east-2.aws.neon.tech/neondb?sslmode=require
+
+dbUrl=mongodb+srv://myNewUsername:newUser@cluster0.aykiz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0

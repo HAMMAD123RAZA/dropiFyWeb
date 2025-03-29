@@ -7,23 +7,30 @@ const Login = () => {
   const [email, setemail] = useState('')
 const navigate=useNavigate()
 
-  const handleLogin=async()=>{
-    try {
-      const api=await axios.post('http://localhost:8080/login',{
-        password:Password,
-        email:email
-      })
-      alert('alright , logged in ')
-      setemail('')
-      setPassword('')
-      localStorage.setItem('token',api.data.token)
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const api = await axios.post('http://localhost:8080/user/login', { email: Email, password: Password });
+    setData(api.data);
+    console.log(api.data);
+    localStorage.setItem('token', api.data.token);
 
-      navigate('/')
-    } catch (error) {
-      console.log(error)
-      alert('couldnt get through')
+    if (api.data.success) {
+      alert(api.data.message);
+    } else {
+      alert(api.data.message);
     }
+
+    localStorage.setItem('user', JSON.stringify(api.data));
+    setEmail('');
+    setPassword('');
+    navigate('/');
+  } catch (error) {
+    console.log('err in login', error);
+    alert(error.response?.data?.message || 'Login failed. Please try again.');
+    alert(error);
   }
+};
 
   return (
     <>
@@ -54,7 +61,7 @@ const navigate=useNavigate()
             className="w-full px-4 py-2 mb-6 focus:ring-2 focus:ring-blue-400 focus:outline-none border rounded-md"
           />
 
-          <button onClick={handleLogin} className="w-full py-2 bg-blue-500 transition duration-200 text-white hover:bg-white hover:text-blue-500 font-bold text-lg border-2 border-blue-500 rounded-lg">
+          <button onClick={handleSubmit} className="w-full py-2 bg-blue-500 transition duration-200 text-white hover:bg-white hover:text-blue-500 font-bold text-lg border-2 border-blue-500 rounded-lg">
             Login
           </button>
           <p className="text-center text-sm text-gray-500 py-3">

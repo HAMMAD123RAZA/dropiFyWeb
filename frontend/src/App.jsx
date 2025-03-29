@@ -14,6 +14,7 @@ import PropTypes from 'prop-types';
 import SignUp from './components/SignUp.jsx'
 import Loading from './components/Loading.jsx'
 import { ToastContainer } from 'react-toastify'
+import VerifyEmail from './components/VerifyEmail.jsx'
 
 const App = () => {
 
@@ -51,7 +52,8 @@ PrivateRoute.propTypes = {
             
           }
         />
-        <Route
+    <Route path='/verify-email' element={<VerifyEmail />} /> 
+    <Route
           path="/bottle"
           element={
             

@@ -14,7 +14,7 @@ export const GetProducts=async(req,res)=>{
         res.json({message:error.message})
     }
 }
-
+ 
 export const GetProduct=async(req,res)=>{
     const {Id}=req.params;
     

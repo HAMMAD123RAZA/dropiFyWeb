@@ -1,0 +1,10 @@
+neonDb=postgresql://neondb_owner:QCt72xyzDLof@ep-steep-frost-a5zsffga.us-east-2.aws.neon.tech/neondb?sslmode=require
+
+
+CLOUDINARY_CLOUD_NAME=diblqbuco
+CLOUDINARY_API_KEY=818677984262534
+api_secret=Lzxd6MeNR0XedDuUfUouxFurR-s
+email=01hammadraza@gmail.com
+password=MEMory@123
+
+CLOUDINARY_URL=cloudinary://818677984262534:***************************@diblqbuco
