@@ -5,13 +5,14 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import Slider from './Slider';
 
-
 const Home = () => {
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
     try {
-      const api = await axios.get('https://dropapi-54rsae4p4-hammad-razas-projects.vercel.app/get');
+      // const api = await axios.get('https://dropapi-54rsae4p4-hammad-razas-projects.vercel.app/get');
+      const api = await axios.get('http://localhost:8080/get');
+
       setData(api.data);
       console.log("data from home:",api.data.data)
     } catch (error) {
