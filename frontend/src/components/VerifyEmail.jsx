@@ -38,7 +38,7 @@ const VerifyEmail = () => {
           }
           
           setTimeout(() => {
-            navigate('/user/login');
+            navigate('/login');
           }, 3000);
         } else {
           setStatus('error');

@@ -8,31 +8,74 @@ const sql=neon(process.env.neonDb)
 
 export const signUp = async (req, res) => {
     const { username, email, password } = req.body;
+    
+    // Validate input
+    if (!username || !email || !password) {
+        return res.status(400).json({ 
+            success: false,
+            message: "All fields are required" 
+        });
+    }
+    
     try {
-        // Fix 1: Check array length instead of truthiness
-        const user = await sql`SELECT * FROM users WHERE email=${email}`;
-        if (user.length > 0) {  // Check if any users were found
-            return res.status(400).json({ message: "user already exists" });
+        // Check if user exists
+        const existingUser = await sql`SELECT * FROM users WHERE email=${email}`;
+        if (existingUser.length > 0) {
+            return res.status(400).json({ 
+                success: false,
+                message: "User already exists" 
+            });
         }
 
+        // Hash password
         const hashPass = await bcrypt.hash(password, 10);
-        // Fix 2: Fix the returning value reference
-        const newUser = await sql`INSERT INTO users (username, email, password) 
-                                 VALUES (${username}, ${email}, ${hashPass}) 
-                                 RETURNING *`;
         
-        // Fix 3: Use newUser[0] since query returns an array
+        // Insert new user
+        const newUser = await sql`
+            INSERT INTO users (
+                username, 
+                email, 
+                password, 
+                is_verified, 
+                verification_token, 
+                token_expiry
+            ) VALUES (
+                ${username}, 
+                ${email}, 
+                ${hashPass}, 
+                false, 
+                NULL, 
+                NULL
+            ) RETURNING *`;
+        
+        // Generate JWT token
         const token = jwt.sign(
-            { id: newUser[0].id, email },  // Changed _id to id
-            'meri_jwt_secKey',
+            { id: newUser[0].id, email }, 
+            process.env.JWT_SECRET || 'meri_jwt_secKey',
             { expiresIn: '1h' }
         );
         
-        res.status(200).json({ message: 'user created', user: newUser[0], token });
+        // Return success response
+        return res.status(201).json({ 
+            success: true,
+            message: 'User created successfully', 
+            newUser: {
+                id: newUser[0].id,
+                username: newUser[0].username,
+                email: newUser[0].email,
+                is_verified: newUser[0].is_verified
+            }, 
+            token 
+        });
     } catch (error) {
-        res.status(500).json({ message: 'error creating user', error: error.message });
+        console.error('SignUp error:', error);
+        return res.status(500).json({ 
+            success: false,
+            message: 'Error creating user', 
+            error: error.message 
+        });
     }
-};
+};;
 
 // Login function (also needs similar fixes)
 export const login = async (req, res) => {

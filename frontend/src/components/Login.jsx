@@ -22,7 +22,7 @@ const handleSubmit = async (e) => {
     }
 
     localStorage.setItem('user', JSON.stringify(api.data));
-    setEmail('');
+    setemail('');
     setPassword('');
     navigate('/');
   } catch (error) {

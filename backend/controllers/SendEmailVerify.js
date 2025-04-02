@@ -36,12 +36,13 @@ export const sendEmailVerification = async (req, res) => {
     
     const tokenExpiry = new Date();
     tokenExpiry.setHours(tokenExpiry.getHours() + 24);
-    
+    const formattedTokenExpiry = tokenExpiry.toISOString()
+
     // Save token and expiry in database
     await sql`
       UPDATE users 
       SET verification_token = ${verificationToken}, 
-          token_expiry = ${tokenExpiry} 
+          token_expiry = ${formattedTokenExpiry} 
       WHERE id = ${user.id}
     `;
     
@@ -55,7 +56,7 @@ export const sendEmailVerification = async (req, res) => {
       subject: 'Verify Your Email Address',
       html: `
         <h1>Email Verification</h1>
-        <p>Hi ${user.name},</p>
+        <p>Hi ${user.username},</p>
         <p>Thanks for registering! Please click the link below to verify your email address:</p>
         <a href="${verificationUrl}">Verify Email</a>
         <p>This link will expire in 24 hours.</p>
@@ -112,7 +113,7 @@ export const verifyEmail = async (req, res) => {
     if (user.is_verified) {
       return res.status(200).json({ 
         success: true, 
-        message: 'Email already verified. You can now log in.'
+        message: 'Email is verified. You can now log in.'
       });
     }
     

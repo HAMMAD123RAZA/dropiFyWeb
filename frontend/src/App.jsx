@@ -113,6 +113,7 @@ PrivateRoute.propTypes = {
               <SignUp />
           }
         />
+         
       </Routes>
       <ToastContainer />
     </Router>

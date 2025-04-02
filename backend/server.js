@@ -134,7 +134,8 @@ const transporter = nodemailer.createTransport({
         res.status(500).send({ message: 'Error sending email', error });
     }
 });
-  
+
+
 // Start server and connect to DB
 app.listen(8080, '0.0.0.0', async () => {
     console.log('Server started on port 8080');
