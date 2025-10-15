@@ -37,7 +37,6 @@ const Explore = () => {
         />
       </div>
 
-      {/* Cards */}
       <div className="md:grid md:grid-cols-4 grid-cols-1 md:px-2 px-6 md:py-3 py-5 gap-x-4 gap-y-6">
         {searchQuery.length > 0 ? (
           searchQuery.map((item, id) => (
