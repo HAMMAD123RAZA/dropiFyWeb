@@ -84,7 +84,7 @@ app.delete('/delete/:id', delProduct);
 app.post('/sendOrder', createOrder);
 app.post('/send_email_verify', sendEmailVerification);
 
-// Route to verify email
+//  verify email
 app.get('/verify-email', verifyEmail);
 
 app.get('/', (req, res) => {
@@ -106,7 +106,7 @@ const transporter = nodemailer.createTransport({
     },
   });
   
-  // Endpoint to send order email
+  //  send order email
   app.post('/send-order', async (req, res) => {
     const { items } = req.body;
     console.log('Received items:', req.body.items);
